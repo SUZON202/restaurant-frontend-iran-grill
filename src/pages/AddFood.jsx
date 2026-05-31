@@ -14,8 +14,7 @@ const AddFood = () => {
         
         const token = localStorage.getItem('access-token');
 
-        // ব্যাকএন্ড API তে ডেটা পাঠানো হচ্ছে
-        fetch('http://localhost:5000/api/foods', {
+        fetch('https://iran-grill-backend.onrender.com/api/foods', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -26,10 +25,10 @@ const AddFood = () => {
         .then(res => res.json())
         .then(data => {
             if(data.success) {
-                alert("খাবারটি ডাটাবেসে সফলভাবে যোগ করা হয়েছে! 🎉");
-                form.reset(); // ফর্মটি খালি করার জন্য
+                alert("খাবারটি ডাটাবেসে সফলভাবে যোগ করা হয়েছে! 🎉");
+                form.reset();
             } else {
-                alert(data.error || "কিছু একটা সমস্যা হয়েছে!");
+                alert(data.error || "কিছু একটা সমস্যা হয়েছে!");
             }
         })
         .catch(err => {
@@ -45,7 +44,6 @@ const AddFood = () => {
             </h2>
 
             <form onSubmit={handleAddFood} className="space-y-6">
-                {/* Food Name & Price - 2 Columns */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <label className="block text-gray-300 text-sm font-medium mb-2">Food Name</label>
@@ -70,7 +68,6 @@ const AddFood = () => {
                     </div>
                 </div>
 
-                {/* Category & Image URL - 2 Columns */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <label className="block text-gray-300 text-sm font-medium mb-2">Category</label>
@@ -97,7 +94,6 @@ const AddFood = () => {
                     </div>
                 </div>
 
-                {/* Description */}
                 <div>
                     <label className="block text-gray-300 text-sm font-medium mb-2">Description</label>
                     <textarea 
@@ -109,7 +105,6 @@ const AddFood = () => {
                     ></textarea>
                 </div>
 
-                {/* Submit Button */}
                 <div className="mt-8">
                     <button 
                         type="submit" 

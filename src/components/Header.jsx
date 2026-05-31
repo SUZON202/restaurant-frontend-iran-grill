@@ -50,7 +50,7 @@ const Header = () => {
                     <Link to="/menu" className="hover:text-[#FF6600] transition-colors">Menu</Link>
                     <Link to="/reservations" className="hover:text-[#FF6600] transition-colors">Open Table Reservations</Link>
                     <Link to="/contact" className="hover:text-[#FF6600] transition-colors">Contact</Link>
-                    <Link to="/register" className="hover:text-[#FF6600] transition-colors">Register</Link>
+                    
                     
                     {/* More Dropdown Menu */}
                     <div className="relative group cursor-pointer">
