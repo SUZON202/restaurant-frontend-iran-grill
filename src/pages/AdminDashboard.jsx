@@ -21,7 +21,7 @@ const AdminDashboard = () => {
 
     // Messages Fetch
     useEffect(() => {
-        fetch('http://localhost:5000/api/contacts', {
+        fetch('https://iran-grill-backend.vercel.app/api/contacts', {
             headers: { authorization: `Bearer ${token}` }
         })
             .then(res => res.json())
@@ -37,7 +37,7 @@ const AdminDashboard = () => {
 
     // Users Fetch
     useEffect(() => {
-        fetch('http://localhost:5000/api/users', {
+        fetch('https://iran-grill-backend.vercel.app/api/users', {
              headers: { authorization: `Bearer ${token}` }
         })
             .then(res => res.json())
@@ -53,7 +53,7 @@ const AdminDashboard = () => {
 
     // Orders Fetch
     useEffect(() => {
-        fetch('http://localhost:5000/api/orders', {
+        fetch('https://iran-grill-backend.vercel.app/api/orders', {
              headers: { authorization: `Bearer ${token}` }
         })
             .then(res => res.json())
@@ -69,7 +69,7 @@ const AdminDashboard = () => {
 
     // Foods Fetch
     useEffect(() => {
-        fetch('http://localhost:5000/api/foods')
+        fetch('https://iran-grill-backend.vercel.app/api/foods')
             .then(res => res.json())
             .then(data => {
                 if(!data.error) setFoods(data);
@@ -87,7 +87,7 @@ const AdminDashboard = () => {
         if (!confirmDelete) return;
 
         try {
-            const response = await fetch(`http://localhost:5000/api/contacts/${id}`, {
+            const response = await fetch(`https://iran-grill-backend.vercel.app/api/contacts/${id}`, {
                 method: 'DELETE',
                 headers: { authorization: `Bearer ${token}` }
             });
@@ -103,7 +103,7 @@ const AdminDashboard = () => {
     // Order Status Update
     const handleStatusChange = async (id, newStatus) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/orders/${id}`, {
+            const response = await fetch(`https://iran-grill-backend.vercel.app/api/orders/${id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -127,7 +127,7 @@ const AdminDashboard = () => {
         if (!confirmDelete) return;
 
         try {
-            const response = await fetch(`http://localhost:5000/api/orders/${id}`, {
+            const response = await fetch(`https://iran-grill-backend.vercel.app/api/orders/${id}`, {
                 method: 'DELETE',
                 headers: { authorization: `Bearer ${token}` }
             });
@@ -147,7 +147,7 @@ const AdminDashboard = () => {
         if (!confirmDelete) return;
 
         try {
-            const response = await fetch(`http://localhost:5000/api/users/${id}`, {
+            const response = await fetch(`https://iran-grill-backend.vercel.app/api/users/${id}`, {
                 method: 'DELETE',
                 headers: { authorization: `Bearer ${token}` }
             });
@@ -167,7 +167,7 @@ const AdminDashboard = () => {
         if (!confirmDelete) return;
 
         try {
-            const response = await fetch(`http://localhost:5000/api/foods/${id}`, {
+            const response = await fetch(`https://iran-grill-backend.vercel.app/api/foods/${id}`, {
                 method: 'DELETE',
                 headers: { authorization: `Bearer ${token}` }
             });
@@ -189,7 +189,7 @@ const AdminDashboard = () => {
 
     const handleUpdateFood = async (id) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/foods/${id}`, {
+            const response = await fetch(`https://iran-grill-backend.vercel.app/api/foods/${id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json', authorization: `Bearer ${token}` },
                 body: JSON.stringify(editFormData)

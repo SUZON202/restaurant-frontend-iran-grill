@@ -39,7 +39,7 @@ const Auth = () => {
     // ==========================================
     const generateToken = async (email) => {
         try {
-            const res = await fetch('http://localhost:5000/api/jwt', {
+            const res = await fetch('https://iran-grill-backend.vercel.app/api/jwt', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
